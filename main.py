@@ -1,6 +1,6 @@
-import easyocr
+def main():
+    print("Hello from ocr-anamnese!")
 
-reader = easyocr.Reader(["pt"])
-output = reader.readtext("./data/receita.jpg", detail=0)
 
-print(output)
+if __name__ == "__main__":
+    main()
