@@ -1,8 +1,10 @@
 # ocr-anamnese
 
 ### Dependencies:
-- Python 3.13
-- uv
+- **Python 3.13**
+- **uv**
+- **Ollama**
+  - **Model: llama3**
 
 ### 1. Clone
 
