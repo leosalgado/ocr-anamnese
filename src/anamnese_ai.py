@@ -8,7 +8,7 @@ def anamnese_ai_analysis(ocr_text):
         messages=[
             {
                 "role": "user",
-                "content": "Analise o seguinte paciente e gere um relatório simples com achados, possíveis diagnósticos e sugestões finais, pronto para PDF: "
+                "content": "Interprete os seguintes dados do paciente e gere um relatório simples com achados, possíveis diagnósticos e sugestões finais em Português do Brasil (PTBR), dividido em Títulos, subtítulos e seções em formato MARKDOWN. "
                 + str(ocr_text),
             },
         ],

@@ -1,6 +1,6 @@
 import os
 import sys
-from fpdf import FPDF
+import pypandoc
 
 
 def get_file_path_from_arg():
@@ -21,14 +21,10 @@ def save_pdf(text, file):
     dir_path = os.path.dirname(file)
     pdf_path = os.path.join(dir_path, "relatorio.pdf")
 
-    pdf = FPDF()
-    pdf.add_page()
-    pdf.set_auto_page_break(auto=True, margin=15)
-    pdf.set_font("Arial", size=12)
-
-    for line in text.split("\n"):
-        pdf.multi_cell(0, 10, line)
-
-    pdf.output(pdf_path)
-
-    return pdf_path
+    pypandoc.convert_text(
+        text,
+        "pdf",
+        format="md",
+        outputfile=pdf_path,
+        extra_args=["--standalone", "--pdf-engine=weasyprint"],
+    )
